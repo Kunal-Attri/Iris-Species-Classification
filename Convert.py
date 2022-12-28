@@ -16,3 +16,9 @@ def convert_to_dataframe(sk_data: Bunch) -> DataFrame:
         col_map[i] = target
     df['target'] = df['target'].map(col_map)
     return df
+
+
+def single_y_test_pred(y_test, y_pred):
+    return pd.concat(
+        [y_test.reset_index(), pd.DataFrame({"y_pred": y_pred})], axis=1
+    )
