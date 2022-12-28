@@ -18,7 +18,7 @@ def convert_to_dataframe(sk_data: Bunch) -> DataFrame:
     return df
 
 
-def single_y_test_pred(y_test, y_pred):
+def single_y_test_pred(y_test, y_pred) -> DataFrame:
     return pd.concat(
         [y_test.reset_index(), pd.DataFrame({"y_pred": y_pred})], axis=1
     )
